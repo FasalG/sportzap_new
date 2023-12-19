@@ -1,0 +1,216 @@
+<div class="dash p-3">
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+          <h1>Dashboard</h1>
+        </div><!-- End Page Title -->
+    
+        <div class="section dashboard">     
+              <div class="row">    
+                <!-- Revenue Card -->
+                <div class="col-12">
+                  <div class="card info-card revenue-card">    
+                    <div class="card-body">
+                      <h5 class="card-title">Revenue</h5>
+                      <div class="d-flex">
+                        <div class="d-flex revenue-date me-3">
+                          <label>Start Date</label>
+                          <input type="date" class="form-control" [(ngModel)]="date.start_date">
+                        </div>
+                        <div class="d-flex revenue-date mx-3" >
+                          <label>End Date</label>
+                          <input type="date" class="form-control" [(ngModel)]="date.end_date">
+                        </div> 
+                        <div>
+                          <button class="btn btn-success" (click)="dateDetails()">Apply</button>
+                        </div>                      
+                      </div>                      
+    
+                      <div class="d-flex align-items-center my-3">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>${{income.message.monthly_income}}</h6>
+                          <span class="text-success small pt-1 fw-bold">Last Month</span>
+    
+                        </div>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div><!-- End Revenue Card -->
+    
+                <!-- Customers Card -->
+                <div class="col-xxl-4 col-xl-12">
+    
+                  <div class="card info-card customers-card">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body">
+                      <h5 class="card-title">Customers <span>| This Year</span></h5>
+    
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>{{customercount}}</h6>
+                          <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+    
+                        </div>
+                      </div>
+    
+                    </div>
+                  </div>
+    
+                </div><!-- End Customers Card -->
+    
+                <!-- Recent booking -->
+                <div class="col-12">
+                  <div class="card recent-sales overflow-auto">   
+    
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Recent Booking</h5>
+                        <span><a [routerLink]="['../booking']" routerLinkActive="router-link-active" >See all</a></span> 
+                      </div>
+                      <div>
+                        <table class="table table-borderless datatable">
+                          <thead>
+                            <tr>
+                              <th scope="col">User Name</th>
+                              <th scope="col">Mobile</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Slot</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Payment Type</th>
+                              <th scope="col">Amount Paid</th>
+                              <th scope="col">Balance</th>
+                              <th scope="col">Turf Name</th>                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let book of bookingData.message.slice(0,4);">
+                              <td>{{book.user_name}}</td>
+                              <td>{{book.user_mobile}}</td>
+                              <td>{{book.date}}</td>
+                              <td>{{book.start_time}} to {{book.end_time}}</td>
+                              <td>{{book.price}}</td>
+                              <td>{{book.Payment_type}}</td>
+                              <td>{{book.amount_paid}}</td>
+                              <td>{{book.price-book.amount_paid}}</td>
+                              <td>{{book.turf_name}}</td>  
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>                            
+                    </div>
+    
+                  </div>
+                </div><!-- End Recent Sales -->
+    
+                <!-- Top Selling -->
+                <div class="col-12">
+                  <div class="card top-selling overflow-auto"> 
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Recent Transaction</h5>
+                        <span><a [routerLink]="['../transaction']" routerLinkActive="router-link-active" >See all</a></span> 
+                      </div>
+                      <div>
+                        <table class="table table-borderless datatable">
+                          <thead>
+                            <tr class="text-center">
+                              <th scope="col">Turf Name</th>
+                              <th scope="col">User Name</th>
+                              <th scope="col">Total Price</th>
+                              <th scope="col">Amount Paid</th>
+                              <th scope="col">Balance</th>
+                              <th scope="col">Amount credited to admin</th>
+                              <th scope="col">Amount credited to turf owner</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let trans of transData.message"  class="text-center">
+                              <th scope="row">{{trans.turf_name}}</th>
+                              <td>{{trans.user_name}}</td>
+                              <td>{{trans.price}}</td>
+                              <td>{{trans.amount_paid}}</td>
+                              <td>{{trans.price-trans.amount_paid}}</td>
+                              <td>{{trans.amount_paid*30/100}}</td>
+                              <td>{{trans.amount_paid*70/100}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>                            
+                    </div>   
+                    
+                </div><!-- End Top Selling -->    
+
+                 <!-- Reports -->
+                 <div class="col-12">
+                  <div class="card">
+    
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+    
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+    
+                    <div class="card-body">
+                      <h5 class="card-title">Reports <span>/Today</span></h5>
+                      <div style="display: block">
+                            <canvas id="myChart"></canvas>
+                        </div>
+    
+    
+                    </div>
+    
+                  </div>
+                </div><!-- End Reports -->
+    
+              <!-- Budget Report -->
+              <div class="card">
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+    
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+    
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+                  <div style="display: block">
+                    <canvas id="radarchart"></canvas>
+                </div>
+    
+                </div>
+              </div><!-- End Budget Report -->
+    
+           

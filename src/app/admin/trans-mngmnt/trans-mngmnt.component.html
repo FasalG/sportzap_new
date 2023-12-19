@@ -1,0 +1,38 @@
+<!-- Booking history -->
+
+<div class="p-4 col-12">
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <h5 class="card-title mb-4">Transaction History</h5>
+
+        <table class="table table-borderless datatable">
+          <thead>
+            <tr class="text-center">
+              <th scope="col">Turf Name</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Total Price</th>
+              <th scope="col">Amount Paid</th>
+              <th scope="col">Balance</th>
+              <th scope="col">Amount credited to admin</th>
+              <th scope="col">Amount credited to turf owner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trans of transData.message"  class="text-center">
+              <th scope="row">{{trans.turf_name}}</th>
+              <td>{{trans.user_name}}</td>
+              <td>{{trans.price}}</td>
+              <td>{{trans.amount_paid}}</td>
+              <td>{{trans.price-trans.amount_paid}}</td>
+              <td>{{trans.amount_paid*30/100}}</td>
+              <td>{{trans.amount_paid*70/100}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div><!-- End booking -->
+

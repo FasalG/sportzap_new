@@ -1,0 +1,149 @@
+<header class="headerFixed col-12 p-0">
+  <div class="container d-flex justify-content-between">
+      <div class="logo">
+          <h1>Sportzapp</h1>
+      </div>
+      <div>
+          <span class="text-white px-3"><a style="text-decoration: none;" [routerLink]="['/owner/bookingHistory']" routerLinkActive="router-link-active" >Booking Details</a></span>
+          <span class="text-white px-3"><a style="text-decoration: none;">Reviews</a></span>
+          <span class="login text-white px-3"><a style="text-decoration: none;" (click)="logout()">Logout</a></span>
+      </div>
+  </div>
+</header>
+
+<div  class="container-fluid over-flow px-0 mt-5">
+  <div class="banner">
+    <div  class="banner_text d-flex flex-column justify-content-center ms-lg-5 ms-0 ps-sm-5 ps-3 pt-5">
+      <span class="banner_text1 fw-bold aos-init aos-animate">unleash success with<br> Sportzapp</span>
+      <span class="banner_text2 fz-16 mt-2 aos-init aos-animate">List your turf and Start get booking Today</span>
+      <button class="register_button btn btn-warning px-5 py-2 mt-4 aos-init aos-animate" uk-toggle="target: #my-modal" (click)="getamenityDetails()" >Register</button>
+    </div>
+  </div>
+</div>
+
+<section class="turfdet p-5 container-fluid row mx-0 col-12 row d-flex align-items-center justify-content-center" *ngIf="ownerturData.length>0">
+  <h3 style="border-left: 5px solid black;">Your Turf</h3>
+
+  <div class="card p-0 m-3" style="width: 17rem; height: 17rem; cursor: pointer" *ngFor="let turf of ownerturData"(click)="turfdet(turf.id)"  >
+    <div class="imagediv">
+        <img class="card-img-top" src={{turf.image}}  alt="Card image cap">
+    </div>    
+    <div class="card-body">
+        <h5 class="card-title">{{turf.name}}</h5>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- This is the modal -->
+<div id="my-modal" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body modalmain">
+        <div class="modalheader d-flex align-items-center justify-content-center">
+          <h2 class="uk-modal-title m-0">Enter Turf Details</h2>
+        </div>       
+        <form id="form" class="forms row col-12 mx-0 d-flex p-3" [formGroup]="turfcreateForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+          <div class="col-6">
+              <label for="Full_Name" class="col-form-label" >Turf Name<span style="color: red;">*</span></label>
+              <input [(ngModel)]="turfdata.name" type="text" class="form-control" id="Full_Name" placeholder="Jhon" required formControlName="name" >
+          </div>
+          <div class="col-6">
+              <label for="mobile_no" class="col-form-label">Price<span style="color: red;"></span></label>
+              <input [(ngModel)]="turfdata.price"  type="number" class="form-control" required formControlName="price">
+          </div>
+          <!-- <div class="col-6">
+              <google-map height="200px"
+                width="100%"
+                [center]="center"
+                (mapClick)="moveMap($event)"
+                (mapMousemove)="move($event)">
+                <map-marker
+                 *ngFor="let markerPosition of markerPositions"
+                 [position]="markerPosition"
+                 [options]="markerOptions"
+                >
+                </map-marker>
+                  <button class="locateme-btn btn btn-light" (click)="currentLocation()">Locate Me</button>
+
+              </google-map>
+
+              <div>Latitude: {{display?.lat}}</div>
+              <div>Longitude: {{display?.lng}}</div>
+          </div> -->
+
+
+          <div class="col-6">
+              <label for="address" class="col-form-label">Location</label>
+              <input [(ngModel)]="turfdata.location" type="textarea" class="form-control"
+                      required formControlName="location"
+                      (input)="onInputChange($event)">
+          </div>
+          <div class="col-12">
+            <label for="address" class="col-form-label">Description</label>
+            <textarea [(ngModel)]="turfdata.description" type="text" class="form-control" required formControlName="description" name="myTextarea" id="text" cols="50" rows="5" required formControlName="description"></textarea>
+        </div>
+          <div class="col-12 d-flex flex-column mt-3">
+            <label>Tur image</label>
+            <input  type="file" id="fileInput" name="fileInput" accept=".jpg, .jpeg, .png" c formControlName="image" (change)="upload($event)">
+          </div>
+          <div class="mt-4 mb-3 col-12 d-flex flex-column">
+            <h5>Amenities:</h5>
+            <ul *ngFor="let amenity of allamenityDatafromadmin">
+              <li><input [(ngModel)]="turfdata.amenity" type="checkbox" value="" (click)="test($event,amenity.id)"><img src={{amenity.icon}} alt="" style="width:20px; height: 20px;" > {{amenity.name}}</li>
+            </ul>
+          </div>
+     
+      <div class="modal-footer py-3">     
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="submit">Submit</button>
+        </p>
+      </div>
+    </form>
+    </div>
+</div>
+
+
+
+  
+
+
+
+
+
+<!-- turf table list -->
+  <!-- <div class="col-12 px-0  d-flex flex-wrap justify-content-center align-items-center">
+    <div class="turfcard col-6 m-4 "  *ngFor="let turf of ownerturData">
+      <div class="turfimage">
+        <img src={{turf.image}}>
+      </div>
+      <div class="turfdet px-3">
+          <h3>Turf Name:{{turf.name}}</h3>
+          <h5>Turf Location: </h5>
+          <h5>Description: </h5>
+          <h5>Price: </h5>
+      </div>
+      <div class="showmore">
+        <div>
+            <h5>Amentity: </h5><span>Add More</span>
+            <ul>
+              <li>Drinking Water</li>
+              <li>Washroom</li>
+              <li>Shower</li>
+            </ul>
+        </div>
+        <div class="actionbtn d-flex flex-column">
+            <button (click)="deleteTurf(turf.id)">Delete</button>
+            <button>Active</button>
+        </div>
+      </div>
+      <div  class="d-flex flex-column align-items-center justify-content-center" style="color: blue;">
+        <a></a>
+        <a class="material-symbols-outlined">expand_more</a>
+    </div>
+    </div>
+   </div> -->
+
+
+
+   <app-footer></app-footer>

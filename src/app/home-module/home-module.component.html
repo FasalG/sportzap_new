@@ -1,0 +1,114 @@
+<div class="chatbot">
+    <div class="m-5 chatbot1" (click)="chatBot()">
+      
+    </div>    
+  </div>
+  
+
+<div class="bg-image">
+</div>
+<div class="bgPosition" [class.bg]="change" >
+ <header [class.headerFixed]="headerVariable">
+    <div class="container d-flex justify-content-between">
+        <div class="logo">
+            <h1>Sportzapp</h1>
+        </div>
+        <div *ngIf="headerVariable" >
+            <span class="text-white px-3"><button class="btn btn-success">Get the App</button></span>
+            <span class="text-white px-3"><a [routerLink]="['/partnershipform']" style="text-decoration: none;">Partner with Us</a></span>
+            <span class="login text-white px-3" [routerLink]="['/auth']" routerLinkActive="router-link-active" >Login</span>
+        </div>
+    </div>
+    </header>
+
+
+<div class="banner my-5">
+    <div class="container py-5">
+        <div class="banner-content text-white py-5">
+            <h4 class="text-white">EXPLORE. BOOK. PLAY!</h4>
+            <p>Explore the best in class football turf grounds in Calicut.<br> Book slots at your nearest football turf with ease and play as per your convenience.</p>
+            <button class="btn btn-warning text-white">Book Now</button>
+        </div>
+    </div>
+</div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+<!-- Gallery -->
+
+<div class="gallery-main">
+    <div class="mainsheet">
+        <section class="gallery row mx-0" [class.visibleGallery]="showGallery">
+                <div class="col-12 p-5 d-flex align-items-center">
+                    <div class="image col-4 px-3">
+                        <img src="../../assets//images/appphoto.png" style="height: 480px;width: 400px;" >
+                    </div>
+                    <div class="content col-8">
+                        <h1 class="fw-bolder">Get Fit The Fun Way!</h1>
+                        <p>Join the community of 2+ million users - find games, book with a few taps, and be a part of the amateur sports revolution! </p>
+                        <button class="btn btn-success">Download the App</button>
+                    </div>
+                </div>    
+        </section>
+        <section class="cards row mx-0">
+            <div class="casrdsdetails col-12 d-flex justify-content-around align-items-center" id="casrdsdetails" [ngClass]="{ 'casrdsdetailsVisible': showCard }">
+                <div class="eachcard col-3 text-center">
+                    <img src="https://www.playspots.in/wp-content/uploads/2020/02/search.png">
+                    <h2>Search</h2>
+                    <p>Are you looking to play after work, organize your Sunday Five's football match? Explore the largest network of sports facilities whole over the India</p>
+                </div>
+                <div class="eachcard col-3  text-center">
+                    <img src="https://www.playspots.in/wp-content/uploads/2020/02/book.png">
+                    <h2>Book</h2>
+                    <p>Once you’ve found the perfect ground or court, Connect with the venue through the Book Now Button to make online booking & secure easier payment</p>
+                </div>
+                <div class="eachcard col-3  text-center">
+                    <img src="https://www.playspots.in/wp-content/uploads/2020/02/play.png">
+                    <h2>Play</h2>
+                    <p>You’re the hero, you’ve found a stunning turf or court, booked with ease and now its time to play. The scene is set for your epic match.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                <div class="uk-card-media-left uk-cover-container">
+                    <img src="../../assets/images/Messi.jpg" alt="" uk-cover>
+                    <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Media Left</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+                    <img src="../../assets/images/Messi.jpg" alt="" uk-cover>
+                    <canvas width="600" height="400"></canvas>
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Media Right</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+
+    
+</div>
+
+<app-footer></app-footer>
+
+
+
+

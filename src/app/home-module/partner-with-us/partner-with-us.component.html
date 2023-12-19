@@ -1,0 +1,97 @@
+<header class="headerFixed">
+    <div class="container d-flex justify-content-between">
+        <div class="logo">
+            <h1>Sportzapp</h1>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- 3 steps -->
+<div style="background-color: #e4ffe8">
+<div class="container py-5">
+    <h1>Get started <span>in 3</span> easy  <span>steps</span></h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="partner-with-us-three-steps-item">
+                <div class="steps-img">
+                    <img src="https://www.playspots.in/wp-content/themes/playspots/assets/images/partner-page/football-court.png" alt="">
+                </div>
+                <div class="steps-title">
+                    <h5>Get</h5>
+                    <h5 class="second">Connected</h5>
+                </div>
+                <p>Fill in details on partnership form &amp; get connected with support team</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="partner-with-us-three-steps-item">
+                <div class="steps-img">
+                    <img src="https://www.playspots.in/wp-content/themes/playspots/assets/images/partner-page/court.png" alt="">
+                </div>
+                <div class="steps-title">
+                    <h5>Set</h5>
+                    <h5 class="second">Manager App</h5>
+                </div>
+                <p>Download manager app &amp; login using the credentials receive via email.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="partner-with-us-three-steps-item">
+                <div class="steps-img">
+                    <img src="https://www.playspots.in/wp-content/themes/playspots/assets/images/partner-page/soccer-player.png" alt="">
+                </div>
+                <div class="steps-title">
+                    <h5>Go</h5>
+                    <h5 class="second">Live</h5>
+                </div>
+                <p>Go live and start getting online booking</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- form -->
+<div class="py-5">
+    <div class="container">
+        <div class="partnershipform">
+            <h2 class="m-0 fw-bold">START YOUR JOURNEY WITH SPORTZAPP</h2>
+            <h3 class="m-0 mt-3 fw-bold">Partnership form</h3>
+        </div>
+        <div class="mainform p-5 my-3" style="background-color: #e4ffe8">
+            <form (ngSubmit)="onSubmit()" [formGroup]="signupform">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 form-group">
+                        <span><input class="form-control" type="text" id="username" name="username" placeholder="Name" [(ngModel)]="turfownerData.abstract.username" formControlName="user"  required></span>
+                        <span class="text-danger d-flex justify-content-start" *ngIf="user && user.invalid && user.touched" style="font-size: 10px;">Username is required</span>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 form-group">
+                        <p><span><input class="form-control"  type="email" id="email" name="email" placeholder="Email" [(ngModel)]="turfownerData.abstract.email" formControlName="email" required></span>
+                            <span class="text-danger d-flex justify-content-start" *ngIf="email && email.invalid && email.touched" style="font-size: 10px;">Email is required</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 form-group">
+                        <p><span><input class="form-control"  type="text" id="organizationName" name="organizationName" placeholder="Organization Name" [(ngModel)]="turfownerData.Organization_name" formControlName="organization" required></span>
+                            <span class="text-danger d-flex justify-content-start" *ngIf="organization && organization.invalid && organization.touched" style="font-size: 10px;">Organization name is required</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 form-group">
+                        <p><span><input class="form-control"  type="tel" id="contactnumber" name="contactnumber" placeholder="Contact Number" [(ngModel)]="turfownerData.abstract.phone_no" formControlName="mobile" required=""></span>
+                            <span class="text-danger d-flex justify-content-start" *ngIf="mobile && mobile.invalid && mobile.touched" style="font-size: 10px;">Contact number is required</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 form-group">
+                        <p><span><input class="form-control"  type="password" id="password" name="password" placeholder="Password" [(ngModel)]="turfownerData.abstract.password" formControlName="password" required></span>
+                            <span class="text-danger d-flex justify-content-start" *ngIf="password && password.invalid && password.touched" style="font-size: 10px;">Password is required</span>
+                            <span class="text-danger d-flex justify-content-start" *ngIf="password?.hasError('minlength')" style="font-size: 10px;">Minimum 8 character needed </span>
+                        </p>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
+                    </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

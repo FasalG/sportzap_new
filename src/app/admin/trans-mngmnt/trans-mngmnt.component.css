@@ -1,0 +1,24 @@
+ /* Recent Sales */
+ .recent-sales {
+    font-size: 14px;
+  }
+  
+.recent-sales .table thead {
+    background: #f6f6fe;
+  }
+  
+ .recent-sales .table thead th {
+    border: 0;
+    text-align: center; 
+    max-width: 100px;   
+
+  }
+  
+ .recent-sales .dataTable-top {
+    padding: 0 0 10px 0;
+  }
+  
+ .recent-sales .dataTable-bottom {
+    padding: 10px 0 0 0;
+  }
+  

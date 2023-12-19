@@ -1,0 +1,39 @@
+<!-- Booking history -->
+
+<div class="p-4 col-12">
+    <div class="card recent-sales overflow-auto">
+
+      <div class="card-body">
+        <h5 class="card-title mb-4">Booking Details</h5>
+        <table class="table table-borderless datatable">
+          <thead>
+            <tr>
+                <th scope="col">Booking ID</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Slot</th>
+              <th scope="col">Price</th>
+              <th scope="col">Amount Paid</th>
+              <th scope="col">Balance</th>
+              <th scope="col">Turf Name</th>
+         
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of bookingData">
+                <td>{{book.turf_booking}}</td>
+              <td>{{book.user_name}}</td>
+              <td>{{book.start_time}} to {{book.end_time}}</td>
+              <td>{{book.price}}</td>
+              <td>{{book.amount_paid}}</td>
+              <td>{{book.price-book.amount_paid}}</td>
+              <td>{{book.turf}}</td>
+     
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div><!-- End booking -->
+

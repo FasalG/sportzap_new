@@ -1,0 +1,40 @@
+<!-- Booking history -->
+
+<div class="p-4 col-12">
+  <div class="card recent-sales overflow-auto">
+
+    <div class="card-body">
+      <h5 class="card-title mb-4">Turf Details</h5>
+      <table class="table table-borderless datatable">
+        <thead>
+          <tr>
+            <th scope="col">Organization Name</th>
+            <th scope="col">Owner Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let turf of turfOwnerData.message">
+            <td>{{turf.Organization_name}}</td>
+            <td>{{turf.name}}</td>
+            <td>{{turf.email}}</td>   
+            <td>{{turf.phone}}</td>
+            <td><button class="btn btn-primary" (click)="singleOwnerDetails(turf.id)">Go to Details</button></td>
+            <td><button class="btn btn-danger" (click)="deleteOwner(turf.id)">Delete</button></td>
+           
+                   
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div><!-- End booking -->
+
+
+<router-outlet></router-outlet>
+
+

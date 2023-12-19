@@ -1,0 +1,139 @@
+
+
+.headerFixed{
+    background-color: black;
+    border-bottom: 1px solid rgb(22, 22, 22);
+    padding: 20px 0 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    height: 80px;
+}
+.headerFixed .logo h1{
+    font-size: 30px;
+    color: rgb(240, 153, 153);
+
+}
+.headerFixed .container{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.banner{
+    position: relative;
+    background-image: url(../../../assets/images/sellwithus-banner.0d5c01d99910a514c4ec.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 400px;
+}
+.register_button{
+    width: 200px;
+}
+.banner_text1{
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.turfdet{
+    background-color: #eff2f5;
+    
+}
+
+
+.turfcard{
+    background-color: white;
+    border: 2px solid snow;
+    box-shadow: -1px -1px 10px 0px rgb(214, 210, 210);
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+
+
+.actionbtn button{
+    margin: 20px;
+    max-width: 100px;
+}
+
+.collapsed{
+    display: none;
+}
+/* .showmore{
+    display: none;
+} */
+
+/* Modal design */
+
+.modalmain{
+    border: 0px;
+    border-radius: 0px;
+    width: 800px;
+}
+.uk-modal-body{
+        padding: 0;
+}
+.modalheader{
+    height: 60px;
+    border-radius: 0px;
+    background-color:rgba(244, 243, 240, 1);
+    border: 0px;    
+    >h2{
+        font-weight: 700;
+        font-size: 22px;
+    }
+}
+.modal-footer{
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+   >p >button{
+        border-radius: 3px;
+        width: 330px;
+        height: 44px;
+        background-color:rgba(31, 114, 177, 1);
+    }
+}
+::placeholder{
+    font-size: 11px;
+}
+label{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.uk-card h3{
+    margin-top: 10px;
+}
+.uk-card-body{
+    padding: 0px;
+    padding-bottom: 10px; 
+    margin: 10px;
+}
+
+google-map{
+    position: relative;
+}
+
+.locateme-btn{
+    position: absolute;
+
+    bottom: 30px;
+    left: 30px;
+}
+
+
+.imagediv{
+    object-fit: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.card-img-top{
+    height:  100%;
+    width:  100%;
+}

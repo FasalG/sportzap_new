@@ -1,0 +1,171 @@
+.chatbot{
+    z-index: 100000;
+    
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+.chatbot1{
+    width: 50px;
+    height: 50px;
+
+}
+
+.bg-image{
+    background-image: url(../../assets//images//Messi.jpg) !important;
+    background-size: cover  !important;
+    background-repeat: no-repeat  !important;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+
+/* @media (max-width: 900px) {
+    .bg-image {
+        background-size: contain; 
+    }
+} */
+
+ /* .bgPosition{
+    background-color:black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+   
+}  */
+.bg{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:black;
+    opacity: 1 !important;
+    transition: 5s all ease;
+    animation-duration: 4s;
+    animation-name: example;
+}
+
+/* @keyframes example {
+    0% {opacity: 0.1 !important;}
+    10%{opacity: 0.2 !important;}
+    20%{opacity: 0.3 !important;}
+    30%{opacity: 0.4 !important;}
+    40%{opacity: 0.5 !important;}
+    50%{opacity:0.6 !important;}
+    60%{opacity:0.7 !important;}
+    70%{opacity:0.8 !important;}
+    80%{opacity:0.9 !important;}
+    90%{opacity:0.99 !important;}    
+    100%{opacity:1 !important;}
+} */
+
+header{
+    padding: 100px 0px;
+    height: 80px;
+   
+   
+}
+.headerFixed{
+    background-color:rgb(41, 40, 40);
+    opacity: 0.7;
+    border-bottom: 1px solid rgb(22, 22, 22);
+    padding: 20px 0 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+}
+.headerFixed .logo h1{
+    font-size: 40px;
+    transition: 0.5s all ease;
+}
+.headerFixed .container{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.logo h1{
+    font-family: 'aqbalumo',sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+.logo p{
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.7;
+    width: 400px;
+}
+
+/* Gallery */
+.mainsheet{
+    background-color: white;
+}
+
+
+
+.gallery{
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 2s ease;  
+}
+.visibleGallery{
+    transform: translateX(0%) !important;      
+}
+.image img{
+   border: none;
+   border-radius: 10px;
+   box-shadow: 2px 2px 2px 2px black;
+}
+
+.login{
+    cursor: pointer;
+}
+
+/* cards */
+.cards{
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    .casrdsdetails{
+    height: 100%;
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+    }
+}
+.casrdsdetails{
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    
+
+}
+.casrdsdetailsVisible{
+    opacity: 1;
+ 
+}
+
+.eachcard{
+    >h2{
+        margin-top: 10px;
+    }
+    >img{
+        width: 50px;
+        height: 50px;
+    }
+    
+}
+
+
+ 
+

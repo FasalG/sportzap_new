@@ -1,0 +1,105 @@
+<header class="headerFixed">
+    <div class="container d-flex justify-content-between">
+        <div class="logo">
+            <h1>Sportzapp</h1>
+        </div>
+        <div>
+            <span class="text-white px-3"><a style="text-decoration: none;">Booking Details</a></span>
+            <span class="text-white px-3"><a style="text-decoration: none;">Reviews</a></span>
+            <span class="login text-white px-3"><a style="text-decoration: none;" (click)="logout()">Logout</a></span>
+        </div>
+    </div>
+  </header>
+
+  <div class="row mx-0">
+    <div class="col-12 d-flex px-0" *ngFor="let turf of eachturfmodaldata">
+        <div class="imagediv col-4 m-3" >
+            <div class="imges">
+                <img src={{turf.image}} style="height: 300px; width: 100%;" alt="">
+            </div>
+        </div>
+        <div class="titlediv col m-3">
+            <div class="title">
+                <h1>{{turf.name}}</h1>
+            </div>
+            <div>
+                <h5>{{turf.location}}</h5>
+                <span>Price:  {{turf.price}}</span>
+            </div>
+            <div class="my-5">
+                <h5>Amentities:</h5>
+                <ul  *ngFor="let amenity of amenityData">
+                    <li>{{amenity.name}}</li>                 
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+
+
+
+
+<!-- <section class="row mx-0 p-5">
+    <div class="turfmodal col-12 d-flex" *ngFor="let turf of eachturfmodaldata">
+        
+        <div class="imagepart col-4">
+                <img src={{turf.image}} alt="">
+        </div>
+        <div class="col-4 p-5">
+                <h3>{{turf.name}}</h3>
+                <span>{{turf.location}}</span><br>
+                <Span>Price: {{turf.price}}</Span>
+                <h5>Amentities:</h5>
+                <ul  *ngFor="let amenity of amenityData">
+                    <li><img src={{amenity.icon}} alt="">{{amenity.name}}</li>
+                 
+                </ul>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-danger" (click)="deleteTurf(turf.id)">Delete</button>
+            <button class="btn btn-warning">Update</button>
+        </div>        
+    </div>
+    <div class="review-cards col-12">
+        <div class="col-4">
+            <div class="uk-card uk-card-default uk-width-1-2@m w-100">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" width="40" height="40" src="../../assets/images/Messi.jpg" alt="Avatar">
+                        </div>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
+                            <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+                <div class="uk-card-footer">
+                    <a href="#" class="uk-button uk-button-text">Read more</a>
+                </div>
+            </div>
+        </div>
+         -->
+
+
+
+
+        <!-- <owl-carousel-o [options]="customOptions">
+  
+            <ng-container *ngFor="let slide of slides">
+              <ng-template carouselSlide>
+                <img [src]="slide.img" >
+              </ng-template>
+            </ng-container>
+              
+            </owl-carousel-o>         -->
+    <!-- </div> -->
+
+    <!-- <div>Prediceted Booking: </div>
+</section> -->
+

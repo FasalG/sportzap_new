@@ -1,0 +1,43 @@
+header{
+    padding: 100px 0px;
+    height: 80px;
+   
+   
+}
+.headerFixed{
+    background-color:black;
+    border-bottom: 1px solid rgb(22, 22, 22);
+    padding: 20px 0 !important;
+    position: sticky;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+}
+
+
+.logo h1{
+    font-family: 'aqbalumo',sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+.logo p{
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.7;
+    width: 400px;
+}
+
+
+.partnershipform{
+    >h2{
+        color: green;
+    }
+}
+
+.mainform{
+    box-shadow: -1px -1px 10px 0px rgb(214, 210, 210); ;
+    border-radius: 10px;
+}

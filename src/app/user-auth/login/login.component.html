@@ -1,0 +1,35 @@
+<div class="main col-12 row mx-0 h-100 d-flex justify-content-center align-items-start">   
+    <img src="./../../../assets/images/banner2.jpg">
+   <div class="loginpart col-lg-6 col-md-8 col-sm-10 col-12 p-0 bg-white d-flex justify-content-center align-items-center h-75 min-w-50">
+        <div class="py-5 col-6 w-50">
+            <form class="w-100 h-10" (ngSubmit)="onSubmit()">
+                <div class="px-3">
+                    <h2 class="text-center fw-bold ">Log In</h2>
+                    <!-- <div class="d-flex justify-content-center my-3">
+                        <i class="fa-brands fa-google p-2 m-1"></i>
+                        <i class="fa-brands fa-facebook-f p-2 m-1"></i>
+                        <i class="fa-brands fa-x-twitter p-2 m-1"></i>
+                        <i class="fa-brands fa-square-instagram p-2 m-1"></i>                        
+                    </div>                                      -->
+                     <div class="inputfield d-flex flex-column">
+                        <!-- <span class="text-center">OR</span>  -->
+                        <input type="text" name="username" placeholder="Email/Mobile" [(ngModel)]="owner.username">
+                        <input type="password" name="password" placeholder="password" [(ngModel)]="owner.password">
+                    </div>  
+                </div>              
+            
+                <div class="d-flex flex-column justify-content-center align-items-center py-3">
+                    <span>Forget your password?</span>
+                    <button type="submit" class="btn btn-secondary mt-3">Log In</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="regnav col-6 bg-secondary h-100 w-50 d-flex flex-column justify-content-center align-items-center px-3 text-white text-center">
+                <h2 class="fw-bold mb-4">Hello, Player</h2>
+                <span>Register with your personal details to use all of our site features</span>
+                <button class="btn btn-secondary mt-3" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</button>
+        </div>        
+    </div>
+</div>
+

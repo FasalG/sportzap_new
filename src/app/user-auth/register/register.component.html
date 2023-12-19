@@ -1,0 +1,35 @@
+<div class="main col-12 row mx-0 h-100 d-flex justify-content-center align-items-start">   
+    <img src="./../../../assets/images/banner2.jpg">
+   <div class="loginpart col-lg-6 col-md-8 col-sm-10 col-12 p-0  bg-white d-flex justify-content-center align-items-center h-75 min-w-50">
+        <div class="regnav col-6 bg-secondary h-100 w-50 d-flex flex-column justify-content-center align-items-center px-3 text-white text-center">
+            <h2 class="fw-bold mb-4">Welcome Back!</h2>
+            <span>If you have already an account. Please signin</span>
+            <button class="btn btn-secondary mt-3" [routerLink]="['/']" routerLinkActive="router-link-active" >Sign In</button>
+        </div> 
+        <div class="py-5 col-6 w-50">
+            <form class="w-100 h-10" [formGroup]="signupform" (ngSubmit)="signup()">
+                <div class="px-3">
+                    <h2 class="text-center fw-bold ">Create Account</h2>
+                    <!-- <div class="d-flex justify-content-center my-3">
+                        <i class="fa-brands fa-google p-2 m-1"></i>
+                        <i class="fa-brands fa-facebook-f p-2 m-1"></i>
+                        <i class="fa-brands fa-x-twitter p-2 m-1"></i>
+                        <i class="fa-brands fa-square-instagram p-2 m-1"></i>                        
+                    </div>                                      -->
+                     <div class="inputfield d-flex flex-column">
+                        <!-- <span class="text-center">OR</span>  -->
+                        <input type="text" placeholder="Username" formControlName="user">
+                        <input type="text" placeholder="Email" formControlName="email">
+                        <input type="text" placeholder="Mobile" formControlName="mobile">
+                        <input type="password" placeholder="password" formControlName="password">
+                    </div>  
+                </div>              
+            </form>
+            <div class="d-flex flex-column justify-content-center align-items-center py-3">
+                <button class="btn btn-secondary mt-3">Sign Up</button>
+            </div>
+        </div>       
+    </div>
+</div>
+
+
